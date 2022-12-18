@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Reflection.Metadata;
 using System.Security.Cryptography.X509Certificates;
 using System.Text;
 using System.Threading.Tasks;
@@ -9,12 +10,20 @@ namespace AnisimovLab5
 {
     internal class Case6
     {
+        const string lat = "УуЕеЭэОоАаЯяИиЁёЮюЫы";
+      //  const string lat2 = "AaEeYyUuIiOo";
+        const string lat3 = "бвгджзйклмнпрстфхцчшщ";
+        // const string lat4 = "QqWwRrTtPpSsDdFfGgHhJjKkLlZzXxCcVvBbNnMm";
+        string stringOneNumber = "Варкалось. Хливкие шорьки\r\nПырялись по наве,\r\nИ хрюкотали зелюки,\r\nКак мюмзики в мове.\r\nО бойся Бармаглота, сын!\r\nОн так свирлеп и дик,\r\nА в глуще рымит исполин -Злопастный Брандашмыг.";
+        string stringTwoNumber1 = "Как уже ветерок весенний";
+        string stringTwoNumber2 = "Поселился в зеленом ростке.";
+        string stringTwoNumber3 = "Не успела отнять руки,";
         public void Lines()
         {
             Console.WriteLine("1 задание - Посчитать количество гласных и согласных букв в строке (отдельно)");
             Console.WriteLine("2 задание - Посчитать количество букв А(а) в строке.");
             Console.WriteLine("3 задание - Даны три строки. Вывести их на экран по порядку увеличения символов в них (без пробелов).");
-            int h, p;
+            int h, p,kolVo=0,gG=0,kolVo1=0;
             string stringOneNumber = "Варкалось. Хливкие шорьки\r\nПырялись по наве,\r\nИ хрюкотали зелюки,\r\nКак мюмзики в мове.\r\nО бойся Бармаглота, сын!\r\nОн так свирлеп и дик,\r\nА в глуще рымит исполин -Злопастный Брандашмыг.";
             string stringTwoNumber1 = "Как уже ветерок весенний";
             string stringTwoNumber2 = "Поселился в зеленом ростке.";
@@ -26,11 +35,46 @@ namespace AnisimovLab5
                     Console.WriteLine("1 - Текст из методички");
                     Console.WriteLine("2 - Текст пользователя");
                     Console.WriteLine(stringOneNumber);
+                    string stringOneNumberLower =stringOneNumber.ToLower();
                     p = Help.Input();
                     switch (p)
                     {
                         case 1:
-
+                            for (int i = 0; i < stringOneNumber.Length; i++)
+                            {
+                                for (int j = 0; j < lat.Length; j++)
+                                {
+                                    if(stringOneNumberLower[i] == lat[j])
+                                    {
+                                        kolVo++;
+                                    }
+                                }
+                                //for (int j = 0; j < lat2.Length; j++)
+                                //{
+                                //    if (stringOneNumber[i] == lat2[j])
+                                //    {
+                                //        kolVo++;
+                                //    }
+                                //}
+                                for (int j = 0; j < lat3.Length; j++)
+                                {
+                                    if (stringOneNumber[i]== lat3[j])
+                                    {
+                                        kolVo1++;
+                                    }
+                                }
+                                //for (int j = 0; j < lat4.Length; j++)
+                                //{
+                                //    if (stringOneNumber[i] == lat4[j])
+                                //    {
+                                //        kolVo1++;
+                                //    }
+                                //}
+                                gG++;
+                            }
+                            Console.WriteLine(kolVo);
+                            Console.WriteLine(kolVo1);
+                            Console.WriteLine(gG);
                             break;
                         case 2:
 
