@@ -10,111 +10,149 @@ namespace AnisimovLab5
 {
     internal class Case6
     {
-        const string lat = "УуЕеЭэОоАаЯяИиЁёЮюЫы";
-      //  const string lat2 = "AaEeYyUuIiOo";
+
+        const string lat = "уеэоаыяиюё";
+        const string lat2 = "aeiouy";
         const string lat3 = "бвгджзйклмнпрстфхцчшщ";
-        // const string lat4 = "QqWwRrTtPpSsDdFfGgHhJjKkLlZzXxCcVvBbNnMm";
-        string stringOneNumber = "Варкалось. Хливкие шорьки\r\nПырялись по наве,\r\nИ хрюкотали зелюки,\r\nКак мюмзики в мове.\r\nО бойся Бармаглота, сын!\r\nОн так свирлеп и дик,\r\nА в глуще рымит исполин -Злопастный Брандашмыг.";
-        string stringTwoNumber1 = "Как уже ветерок весенний";
-        string stringTwoNumber2 = "Поселился в зеленом ростке.";
-        string stringTwoNumber3 = "Не успела отнять руки,";
-        public void Lines()
+        const string lat4 = "bcdfghjklmnpqrstvwxyz";
+        const string num1 = "Варкалось. Хливкие шорьки\r\nПырялись по наве,\r\nИ хрюкотали зелюки,\r\nКак мюмзики в мове.\r\nО бойся Бармаглота, сын!\r\nОн так свирлеп и дик,\r\nА в глуще рымит исполин -Злопастный Брандашмыг.";
+        const string num2 = "Как уже ветерок весенний";
+        const string num3 = "Поселился в зеленом ростке.";
+        const string num4 = "Не успела отнять руки,";
+
+        string stringOneNumber, stringTwoNumber1, stringTwoNumber2, stringTwoNumber3;
+        public Case6()
         {
-            Console.WriteLine("1 задание - Посчитать количество гласных и согласных букв в строке (отдельно)");
-            Console.WriteLine("2 задание - Посчитать количество букв А(а) в строке.");
-            Console.WriteLine("3 задание - Даны три строки. Вывести их на экран по порядку увеличения символов в них (без пробелов).");
-            int h, p,kolVo=0,gG=0,kolVo1=0;
-            string stringOneNumber = "Варкалось. Хливкие шорьки\r\nПырялись по наве,\r\nИ хрюкотали зелюки,\r\nКак мюмзики в мове.\r\nО бойся Бармаглота, сын!\r\nОн так свирлеп и дик,\r\nА в глуще рымит исполин -Злопастный Брандашмыг.";
-            string stringTwoNumber1 = "Как уже ветерок весенний";
-            string stringTwoNumber2 = "Поселился в зеленом ростке.";
-            string stringTwoNumber3 = "Не успела отнять руки,";
-            h = Help.Input();
-            switch (h)
+            stringOneNumber = num1;
+            stringTwoNumber1 = num2;
+            stringTwoNumber2 = num3;
+            stringTwoNumber3 = num4;
+        }
+        public Case6(string str)
+        {
+            stringOneNumber = str;
+        }
+        public Case6(string str, string str2, string str3)
+        {
+            stringTwoNumber1 = str;
+            stringTwoNumber2 = str2;
+            stringTwoNumber3 = str3;
+        }
+        public void Answer(string kol, string join, string loh)
+        {
+            Console.WriteLine("1 - " + kol);
+            Console.WriteLine("2 - " + join);
+            Console.WriteLine("3 - " + loh);
+        }
+        public int KolVoElementov(string[] mas)
+        {
+            int kolVo = 0;
+            for (int i = 0; i < mas.Length; i++)
             {
-                case 1:
-                    Console.WriteLine("1 - Текст из методички");
-                    Console.WriteLine("2 - Текст пользователя");
-                    Console.WriteLine(stringOneNumber);
-                    string stringOneNumberLower =stringOneNumber.ToLower();
-                    p = Help.Input();
-                    switch (p)
-                    {
-                        case 1:
-                            for (int i = 0; i < stringOneNumber.Length; i++)
-                            {
-                                for (int j = 0; j < lat.Length; j++)
-                                {
-                                    if(stringOneNumberLower[i] == lat[j])
-                                    {
-                                        kolVo++;
-                                    }
-                                }
-                                //for (int j = 0; j < lat2.Length; j++)
-                                //{
-                                //    if (stringOneNumber[i] == lat2[j])
-                                //    {
-                                //        kolVo++;
-                                //    }
-                                //}
-                                for (int j = 0; j < lat3.Length; j++)
-                                {
-                                    if (stringOneNumber[i]== lat3[j])
-                                    {
-                                        kolVo1++;
-                                    }
-                                }
-                                //for (int j = 0; j < lat4.Length; j++)
-                                //{
-                                //    if (stringOneNumber[i] == lat4[j])
-                                //    {
-                                //        kolVo1++;
-                                //    }
-                                //}
-                                gG++;
-                            }
-                            Console.WriteLine(kolVo);
-                            Console.WriteLine(kolVo1);
-                            Console.WriteLine(gG);
-                            break;
-                        case 2:
-
-                            break;
-                    }
-                    break;
-                case 2:
-                    Console.WriteLine("1 - Текст из методички");
-                    Console.WriteLine("2 - Текст пользователя");
-                    Console.WriteLine(stringOneNumber);
-                    p = Help.Input();
-                    switch (p)
-                    {
-                        case 1:
-
-                            break;
-                        case 2:
-
-                            break;
-                    }
-                    break;
-                case 3:
-                    Console.WriteLine("1 - Текст из методички");
-                    Console.WriteLine("2 - Текст пользователя");
-                    Console.WriteLine(stringTwoNumber1);
-                    Console.WriteLine(stringTwoNumber2);
-                    Console.WriteLine(stringTwoNumber3);
-                    p = Help.Input();
-                    switch (p)
-                    {
-                        case 1:
-
-                            break;
-                        case 2:
-
-                            break;
-                    }
-                    break;
+                kolVo = kolVo + mas[i].Length;
             }
-            Console.ReadKey();
+            return kolVo;
+        }
+        public void Number1()
+        {
+            string stringOneNumberLower = stringOneNumber.ToLower();
+            int kolVo = 0, kolVo1 = 0;
+            for (int i = 0; i < stringOneNumber.Length; i++)
+            {
+                for (int j = 0; j < lat.Length; j++)
+                {
+                    if (stringOneNumberLower[i] == lat[j])
+                    {
+                        kolVo++;
+                    }
+                }
+                for (int j = 0; j < lat2.Length; j++)
+                {
+                    if (stringOneNumberLower[i] == lat2[j])
+                    {
+                        kolVo++;
+                    }
+                }
+                for (int j = 0; j < lat3.Length; j++)
+                {
+                    if (stringOneNumberLower[i] == lat3[j])
+                    {
+                        kolVo1++;
+                    }
+                }
+                for (int j = 0; j < lat4.Length; j++)
+                {
+                    if (stringOneNumberLower[i] == lat4[j])
+                    {
+                        kolVo1++;
+                    }
+                }
+            }
+            Console.WriteLine(kolVo);
+            Console.WriteLine(kolVo1);
+        }
+        public void Number2()
+        {
+            string stringOneNumberLower = stringOneNumber.ToLower();
+            int kolVo = 0;
+            for (int i = 0; i < stringOneNumber.Length; i++)
+            {
+                if (stringOneNumberLower[i] == lat[4] || stringOneNumberLower[i] == lat2[0])
+                {
+                    kolVo++;
+                }
+            }
+            Console.WriteLine(kolVo);
+        }
+        public void Number3()
+        {
+            string[] stringTwoNumber1Split = stringTwoNumber1.Split();
+            string[] stringTwoNumber2Split = stringTwoNumber2.Split();
+            string[] stringTwoNumber3Split = stringTwoNumber3.Split();
+            int chill = KolVoElementov(stringTwoNumber3Split);
+            int chill1 = KolVoElementov(stringTwoNumber2Split);
+            int chel = KolVoElementov(stringTwoNumber1Split);
+            Finnder(chill, chill1, chel);
+        }
+        public void Finnder(int a, int b, int c)
+        {
+            if (a > b)
+            {
+                if (a > c)
+                {
+                    if (b > c)
+                    {
+                        Answer(stringTwoNumber1, stringTwoNumber2, stringTwoNumber3);
+                    }
+                    else
+                    {
+                        Answer(stringTwoNumber1, stringTwoNumber3, stringTwoNumber2);
+                    }
+                }
+                else
+                {
+                    Answer(stringTwoNumber3, stringTwoNumber1, stringTwoNumber2);
+                }
+            }
+            else
+            {
+                if (b > c)
+                {
+                    if (a > c)
+                    {
+                        Answer(stringTwoNumber2, stringTwoNumber1, stringTwoNumber3);
+                    }
+                    else
+                    {
+                        Answer(stringTwoNumber2, stringTwoNumber3, stringTwoNumber1);
+                    }
+                }
+                else
+                {
+                    Answer(stringTwoNumber3, stringTwoNumber2, stringTwoNumber1);
+                }
+            }
+
         }
     }
 }
